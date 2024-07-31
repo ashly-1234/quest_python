@@ -1,1 +1,114 @@
+DAY 1
+
+
+1. List the unique characteristics/features of Python
+Python is a widely-used programming language known for its unique characteristics and features. Here are some of the key features 
+that make Python stand out:
+
+	1. Easy to Learn and Use: Python has a simple and straightforward syntax, which makes it easy to learn and use. 
+This readability makes it an excellent choice for beginners.
+
+	2. Interpreted Language: Python is an interpreted language, meaning that the code is executed line by line, which simplifies debugging
+ and development.
+
+	3. Dynamically Typed: In Python, you don’t need to declare the type of a variable explicitly. The interpreter determines 
+the type at runtime, which increases flexibility and ease of use.
+
+	4. High-Level Language: Python abstracts many complex details of the computer system, such as memory management, 
+allowing developers to focus more on solving problems rather than on low-level programming details.
+
+	5. Extensive Standard Library: Python comes with a large standard library that includes modules and packages for various
+ tasks such as web development, data analysis, machine learning, and more. This rich library significantly reduces 
+ the time needed for development.
+
+	6. Cross-Platform Compatibility: Python is available on various platforms, including Windows, macOS, Linux, and more,
+ making it a versatile language for development across different systems.
+
+	7. Open Source: Python is open-source software, which means it’s free to use, distribute, and modify.
+ This fosters a large community of developers who contribute to its growth and improvement.
+
+	8. Object-Oriented and Procedural Programming: Python supports multiple programming paradigms, including 
+object-oriented programming (OOP) and procedural programming, providing flexibility in how you structure your code.
+
+	9. Strong Support for Integration: Python integrates well with other languages and tools, which makes 
+it suitable for various applications such as web services, enterprise applications, and more. 
+It also supports integration with C, C++, and Java.
+
+	10. Robust Community Support: Python has a large and active community that contributes to 
+an extensive collection of third-party modules and libraries, offers support, and provides numerous resources for learning and problem-solving.
+
+	11. Readable and Maintainable Code: The emphasis on readability in Python’s design philosophy helps developers
+ write clean and maintainable code. The use of whitespace and indentation enforces a clean coding structure.
+
+	12. Support for Multiple Programming Paradigms: Python supports functional programming, imperative programming, and OOP,
+ allowing developers to choose the best approach for their problem.
+
+These features make Python a powerful, flexible, and user-friendly language, suitable for a wide range of applications 
+from web development and data analysis to artificial intelligence and scientific computing.
+
+2. Write a program to check if a number is Even.
+Pseudocode:
+	1. INPUT n.
+	2. remainder = n % 2.
+	3. IF remainder is not equal to 0.
+		answer = odd.
+	4. ELSE.
+		answer = even.
+	5. OUTPUT answer.
+
+Algoithm:
+Step 1- Start the program.
+Step 2- Read/input the number.
+Step 3- if n%2==0 then the number is even.
+Step 4- else number is odd.
+Step 5- display the output.
+
+3. Write a program to convert a lower case letter to upper case.
+Algorithm
+	1. Take an input character.
+	2. Check if the character is a lowercase letter (between 'a' and 'z').
+	3. If it is a lowercase letter, convert it to the corresponding uppercase letter by subtracting 32 from its ASCII value.
+	4. Return the character as is if it is not a lowercase letter.
+	
+Pseudocode:
+	IF 'a' <= character <= 'z' THEN
+    converted_character = chr(ord(character) - 32)
+ELSE
+    converted_character = character
+PRINT converted_character
+
+4. Check if a letter is vowel or consonant
+Algorithm:
+	1. Input Character: Prompt the user to enter a character.
+	2. Convert to Lowercase: Convert the character to lowercase to handle both uppercase and lowercase inputs uniformly.
+	3. Define Vowels: Define a list or set of vowels for easy checking.
+	4. Check if Vowel:
+	5. If the lowercase character is in the list of vowels, classify it as a vowel.
+	6. Check if Consonant:
+	7. If the character is not a vowel but is an alphabet letter, classify it as a consonant.
+	8. Non-Letters:
+	9. If the character is not an alphabet letter, indicate that it is not a letter
+
+5. Check if a number is single digit or not	
+Algorithm:
+	1. Input Number: Get the number from the user or as input.
+	2. Check Range: Verify if the number is within the range of single-digit numbers (i.e., from 0 to 9 or -9 to -1).
+	3. Print Result:
+	4. If the number is within the single-digit range, print "Single Digit".
+	5. Otherwise, print "Not a Single Digit".	
+	
+Pseudocode:
+	1. INPUT: number
+
+# Check if the number is a single digit
+	2. IF -9 <= number <= 9 THEN
+    PRINT "Single Digit"
+	3. ELSE
+    PRINT "Not a Single Digit"
+
+	
+	
+
+
+
 
