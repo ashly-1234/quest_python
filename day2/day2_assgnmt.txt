@@ -1,0 +1,292 @@
+DAY2 - ASSIGNMENT
+
+1. What is the alternative implementation of function overloading in Python?
+	Python doesn't support traditional function overloading where multiple functions share the same name but have different parameter types. However, here are a few common ways to achieve similar functionality:
+	1. Default Arguments:
+		Set default values for parameters, allowing the function to work with different argument combinations.
+		eg:-    def greet(name, greeting="Hello"):
+					print(greeting, name)
+
+				greet("Alice")  # Outputs: Hello Alice
+				greet("Bob", "Hi")  # Outputs: Hi Bob
+				
+	2. Variable-Length Arguments:
+		Use *args and **kwargs to accept any number of positional or keyword arguments.
+		eg:-	   def add(*numbers):
+						return sum(numbers)
+
+					add(1, 2)  # Outputs: 3
+					add(1, 2, 3, 4)  # Outputs: 10
+					
+	3. Type Checking within the Function:
+		Use isinstance() or similar functions to check the types of arguments and execute different code paths accordingly.
+		eg:-		   def calculate(x, y):
+							if isinstance(x, int) and isinstance(y, int):
+								return x + y
+						elif isinstance(x, float) and isinstance(y, float):
+								return x * y
+						else:
+								return "Invalid input types"
+
+						calculate(2, 3)  # Outputs: 5
+						calculate(2.5, 3.5)  # Outputs: 8.75
+						
+	4. Multiple Dispatch Library:
+		Use the multipledispatch library to define functions with different implementations based on argument types.
+		eg:- 	   from multipledispatch import dispatch
+
+				    @dispatch(int, int)
+				    def add(x, y):
+						return x + y
+
+					@dispatch(float, float)
+					def add(x, y):
+						return x * y
+
+					add(2, 3)  # Outputs: 5
+					add(2.5, 3.5)  # Outputs: 8.75
+    The best approach depends on the specific use case and the level of flexibility needed. 
+	Default arguments and variable-length arguments are often sufficient for simple scenarios. 
+	Type checking and the multipledispatch library provide more robust solutions for complex situations where 
+	type-based behavior is essential.
+	
+	
+2. Why there is no implicit type casting in Python ?
+		Python does have implicit type casting, but in a limited way compared to some other languages. It's important to 
+		distinguish between implicit type conversion and implicit type casting:
+	Implicit type conversion:
+		Python automatically converts between certain types when it makes sense and doesn't lead to data loss. 
+		For example, it converts an integer to a float when adding them together.
+	Implicit type casting:
+	This generally refers to converting between incompatible types without explicit instruction from the programmer. 
+	Python avoids this to prevent unexpected behavior and errors.
+	Here's why Python doesn't do widespread implicit type casting:
+	Strong Typing:
+		Python is a strongly typed language, meaning it enforces data types and doesn't allow operations between incompatible types 
+		without explicit conversion. This helps catch errors early on.
+	Explicit is better than Implicit:
+		Python's philosophy emphasizes readability and clarity, and explicit type conversions make code more understandable.
+	Avoiding Ambiguity:
+		Implicit type casting can lead to unexpected results, especially when dealing with complex data types. 
+		Python avoids this by requiring explicit conversions.
+	However, Python does perform implicit type conversions in certain cases:
+	Numeric types:
+		When performing arithmetic operations between integers and floats, Python automatically converts the integer to a float.
+	Widening conversions:
+		When assigning a value of a smaller type to a variable of a larger type, Python automatically converts the value. 
+		For example, assigning an integer to a float variable.
+	In conclusion, while Python does have some implicit type conversions, it avoids widespread implicit type casting to maintain 
+	strong typing, clarity, and avoid ambiguity.
+	
+3. Why there is no ++ and -- (increment/decrement) operators in Python?
+	Python doesn't have the ++ and -- operators for a few reasons:
+	Simplicity and Readability:
+		Python prioritizes code readability and simplicity. The ++ and -- operators can be confusing, especially for beginners, 
+		due to their prefix and postfix variations. Python instead uses x += 1 and x -= 1, which are more explicit and easier to
+		understand.
+	Immutable Integers:
+		In Python, integers are immutable, meaning they can't be changed in place. When you increment an integer using x += 1, 
+		you're actually creating a new integer object and assigning it to x. The ++ operator would imply modifying the integer in place,
+		which doesn't align with Python's object model.
+	Consistency:
+		Python strives for consistency in its language design. Using the += and -= operators for incrementing and decrementing
+		is consistent with the way you perform other arithmetic operations like x *= 2 or x /= 3.
+
+4. What is the difference between @static method and @class method?
+	In Python, @staticmethod and @classmethod are decorators that can be used to define methods within a class that are not 
+	standard instance methods. Although they might seem similar, they serve different purposes and have distinct behaviors.
+
+	@staticmethod
+		Definition: A static method is a method that does not receive any special first argument (like self or cls).
+		Usage: It behaves like a plain function but belongs to the class's namespace. Static methods do not operate on an instance 
+		of the class or the class itself.
+		When to Use: Use static methods for utility functions that perform a task in isolation, without needing access to class 
+		or instance-specific data.
+
+
+	@classmethod
+		Definition: A class method is a method that receives the class itself as the first argument, conventionally named cls.
+		Usage: It can access and modify class state that applies across all instances of the class. Class methods can be called
+		on the class itself, not requiring an instance to be created.
+		When to Use: Use class methods for factory methods that create instances of the class, or when you need to operate
+		on the class as a whole.
+		
+		Example:
+
+
+	class MyClass:
+		count = 0
+    
+		def __init__(self):
+			MyClass.count += 1
+
+		@classmethod
+		def get_instance_count(cls):
+			return cls.count
+
+	# Usage
+	instance1 = MyClass()
+	instance2 = MyClass()
+	print(MyClass.get_instance_count()) 
+
+	Key Differences
+	First Argument:
+	
+		Static Method: Does not take any special first argument.
+		Class Method: Takes the class itself as the first argument (cls).
+	Access:
+
+		Static Method: Cannot access or modify the class state or instance state.
+		Class Method: Can access and modify the class state.
+	Usage Context:
+
+		Static Method: Utility functions that are logically related to the class but do not need class or instance data.
+		Class Method: Factory methods or methods that need to operate on the class itself.
+		
+5. What is the difference between __new__() and __init__() ?
+		In Python, __new__() and __init__() are two special methods associated with object creation and initialization. 
+		They serve distinct purposes and are called at different stages of an object's lifecycle.
+
+	__new__() Method
+		Purpose: __new__() is responsible for creating a new instance of a class. It is the method that constructs the object in memory.
+		Usage: It is a static method (though usually defined as a class method) that takes the class itself as its first argument. 
+		It returns a new instance of the class.
+		When to Use: Use __new__() when you need to control the creation of a new instance, particularly when subclassing immutable types like tuples or strings.
+		Example:
+
+
+		class MyClass:
+			def __new__(cls, *args, **kwargs):
+				print("Creating instance")
+				instance = super(MyClass, cls).__new__(cls)
+				return instance
+
+			def __init__(self, value):
+				print("Initializing instance")
+				self.value = value
+
+		# Usage
+		obj = MyClass(10)
+		# Output:
+		# Creating instance
+		# Initializing instance
+		
+	__init__() Method
+		Purpose: __init__() is responsible for initializing a newly created instance. It sets up the initial state of the object.
+		Usage: It takes the newly created instance as its first argument (usually named self) and initializes it with any additional arguments passed to the constructor.
+		When to Use: Use __init__() for instance-specific initialization, such as setting initial values for instance variables.
+		Example:
+
+
+		class MyClass:
+			def __new__(cls, *args, **kwargs):
+				print("Creating instance")
+				instance = super(MyClass, cls).__new__(cls)
+				return instance
+
+			def __init__(self, value):
+				print("Initializing instance")
+				self.value = value
+
+		# Usage
+		obj = MyClass(10)
+		# Output:
+		# Creating instance
+		# Initializing instance
+	Key Differences
+	Stage in Lifecycle:
+
+		__new__(): Called first to create the instance. It is responsible for returning a new instance of the class.
+		__init__(): Called after __new__() to initialize the instance. It does not return the instance (implicitly returns None).
+	Return Value:
+
+		__new__(): Must return a new instance of the class (or an instance of a different class).
+		__init__(): Does not return anything. It initializes the instance created by __new__().
+	Usage Context:
+
+		__new__(): Used for controlling the creation of new instances, particularly for immutable types.
+		__init__(): Used for initializing instances after they have been created.
+
+6. What is the syntax to use switch-case in Python. Given an example.
+	Python does not have a built-in switch-case statement like some other programming languages (e.g., C, Java). 
+	However, you can achieve similar functionality using dictionaries to map cases to their corresponding actions or by using
+	if-elif-else statements. Since Python 3.10, the match statement (also known as structural pattern matching) provides a 
+	more direct way to implement switch-case-like behavior.
+
+	Using Dictionaries
+		A common way to mimic switch-case functionality in earlier versions of Python is to use dictionaries to map keys to functions or values.
+
+		Example:
+
+
+		def case_one():
+			return "This is case one"
+
+		def case_two():
+			return "This is case two"
+
+		def case_default():
+			return "This is the default case"
+
+		def switch_case(value):
+			switch = {
+				1: case_one,
+				2: case_two,
+			}
+			return switch.get(value, case_default)()
+
+		value = 1
+		print(switch_case(value))  # Output: This is case one
+
+		value = 3
+		print(switch_case(value))  # Output: This is the default case
+		
+	Using if-elif-else Statements:
+		Another way to handle multiple cases is using if-elif-else statements.
+
+		Example:
+
+		def switch_case(value):
+			if value == 1:
+				return "This is case one"
+			elif value == 2:
+				return "This is case two"
+			else:
+				return "This is the default case"
+
+		value = 1
+		print(switch_case(value))  # Output: This is case one
+
+		value = 3
+		print(switch_case(value))  # Output: This is the default case
+		
+	Using match Statement (Python 3.10+):
+		The match statement introduced in Python 3.10 provides a more intuitive and flexible way to implement switch-case-like logic.
+
+		Example:
+
+		def switch_case(value):
+			match value:
+				case 1:
+					return "This is case one"
+				case 2:
+					return "This is case two"
+				case _:
+					return "This is the default case"
+
+		value = 1
+		print(switch_case(value))  # Output: This is case one
+
+		value = 3
+		print(switch_case(value))  # Output: This is the defaul
+		
+7. Can the key within a dictionary be a composite value like a list or tuple, or should it be an atomic value such as number or string?
+	In Python, tuples can be used as dictionary keys to create composite keys. Tuples are hashable and immutable, unlike lists, 
+	which are mutable and can't be used as dictionary keys. Dictionary keys must be immutable data types, like characters, numbers, 
+	or tuples. 
+	Here's why tuples are preferred for composite keys:
+		Immutability: Tuples are immutable, making them suitable for dictionary keys.
+		Hashability: Tuples are hashable, unlike lists, which makes them useful for creating composite keys. 
+	While strings and tuples work well as keys, other types might not work properly. Dictionaries can't have duplicate keys, 
+	and neither lists nor other dictionaries can be used as keys because they are mutable. 
+	Dictionary values can be almost any type, including integers, lists, functions, or strings

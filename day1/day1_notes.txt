@@ -1,4 +1,4 @@
-DAY 1
+DAY 1  - ASSIGNMENT NOTES
 
 
 1. List the unique characteristics/features of Python
