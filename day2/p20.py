@@ -7,6 +7,16 @@ for i in range(n):                         #The outer for loop iterates from 0 t
     # Print stars
     print('*' * (2 * i + 1))               #The number of stars increases as the row index increases. For each row, it prints 2 * i + 1 stars.
 
+
+
+
+
+
+
+
+
+
+
 '''
 Alternative
 n = int(input("Enter the number of lines for the equilateral triangle: "))  # Take input from the user

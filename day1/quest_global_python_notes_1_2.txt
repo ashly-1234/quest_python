@@ -558,3 +558,12 @@ The start value is 25, end value is greater than 2, increment is -2 which is not
 
 Nithin Trainer Repo: https://github.com/neelmyna/nithin_aug24
 -----------------------------------------------------
+
+Syllabus:
+Day1 we focused on programming building blocks and pseudocode.
+Day2 was basic problem solving using Python and pseudocode.
+Day3 problem solving on Loops and Arrays (Lists)
+Day4 Python data structures and string and problem solving
+Day5 PDB and Important Python modules like sys, math, numpy
+Day6 Basic searching and sorting Algoriths and OOP.
+has context menu
