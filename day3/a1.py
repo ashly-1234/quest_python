@@ -1,0 +1,1 @@
+#Accept N numbers from the user and swap the consecutive elements in the list.
