@@ -79,7 +79,7 @@ We cannot use strings as integers in Python. If we try to do so, we get "TypeErr
 ValueError: If we try to convert a data into another type which is not possible. Example, trying to convert 'abc' into int()
 
 Python Solution:
-print('Enter a character to chekc if it is a digit')
+print('Enter a character to check if it is a digit')
 ch = input()
 if ch >= '0' and ch <= '9':
     print('given character is a digit')
@@ -135,7 +135,7 @@ string
 multimedia data (images, video, audio, gif etc)
 
 w.r.t. nature of the data:
-qlalitative and quantitative data
+qualitative and quantitative data
 
 Numeric:
 	number (int, long, short, byte, tinyint, smallint, bigint)
@@ -315,7 +315,7 @@ Also check for the invalid i/p.
 average_score = int(input('Enter your average score to print the result: '))
 if (average_score >= 0 and average_score <= 49):
     print('Result is Fail')
-elif( average_score <=74):
+elif( average_score <=74):           #optimised - instead of (average_score >= 50 and average_score <=74) - optimisation possible bcz we orderly arranged
     print('Result is Second class')
 elif(average_score <= 90):
     print('Result is First class')
@@ -342,7 +342,7 @@ food_item_number = int(input('Enter the food item number that you wish:'))
 if food_item_number < 1 or food_item_number > 5:
     print('Invalid choice entered')
 else:
-    print('Your ' + food_items.get(food_item_number) + ' is here')
+    print('Your ' + food_items.get(food_item_number) + ' is here')           #.get to access values from the dictionary food_items
 print('Thank you, Visit again')
 --------------------------------------------------
 2. Accept the food type (veg or non-veg) from the user and then prompt her for the food item number and serve her the food.
@@ -376,7 +376,7 @@ print('Welcome to our hotel The Taste')
 user_choice = int(input('1:Veg 2:Non-Veg \t Your choice please: ')) 
 items = food_items.get(user_choice, 'Invalid')
 if items == 'Invalid':
-    sys.exit('Invalid choice entered')
+    sys.exit('Invalid choice entered')                                #sys.exit - to exit from the loop
 print(items)
 food_item_number = int(input('Enter the food item number that you wish:'))
 
