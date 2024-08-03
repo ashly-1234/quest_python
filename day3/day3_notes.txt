@@ -292,4 +292,4 @@ Day3 assgnt
  3. Print the smallest and biggest sized strings from a list of N strings
  4. Remove the negative numbers from a list of N numbers.
  5. Demonstrate the different ways of adding elements to a list and different ways to delete elements from a list.
- 6. Learn list slicing and list Comprehension
+ 6. Learn list slicing and list Comprehension 

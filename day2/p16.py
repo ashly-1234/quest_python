@@ -7,3 +7,5 @@ for index in range(0, len(number), 2):
     even_placed_digits_sum += int(number[index])
 
 print("Sum of even-placed digits:", even_placed_digits_sum)
+
+

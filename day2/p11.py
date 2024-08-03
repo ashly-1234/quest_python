@@ -1,4 +1,4 @@
-#Accept the food item number from the user and serve him the food.
+# 2. Accept the food type (veg or non-veg) from the user and then prompt her for the food item number and serve her the food.
 import sys
  
 veg_food_items = {             #defined veg items
@@ -26,8 +26,8 @@ food_items = {
 print('Welcome to our hotel The Taste')
  
 while True:
-    user_choice = int(input('1:Veg 2:Non-Veg \t Your choice please: '))
-    items = food_items.get(user_choice, 'Invalid')       #print items menu
+    user_choice = int(input('1:Veg 2:Non-Veg \t Your choice please: '))                                          #choice 1 or 2 or any number
+    items = food_items.get(user_choice, 'Invalid')       #print items menu if choice number is there else print invalid
     if items == 'Invalid':
         print('Invalid choice entered')
         break

@@ -1,5 +1,8 @@
 #Find sum of the series: 1 - n + n(2) - n(3) + ..... m terms
  
+                                                 #n(2) => n^2 ?   also here no indexing only position from 1 to ...
+
+
 N = int(input('Enter the value of term:'))
 M = int(input('Enter the number of terms:'))
 sum_of_terms = 0

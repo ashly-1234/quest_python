@@ -1,44 +1,26 @@
 # Program to count the number of Odd digits in a number
-input_number = int(input('Enter a number to count number of digits in it: '))
 
-count_of_digits = 0
-temp_number = input_number
+# Get the input number from the user
+number = int(input("Enter the number that you want to count the odd digits: "))
 
-while temp_number != 0:
-    temp_number = temp_number // 10
-    count_of_digits += 1
+# Copy the input number to a temporary variable
+temp_number = number
 
-print(f'Number of digits in {input_number} is {count_of_digits}')
+# Initialize a counter for odd digits
+odd_count = 0
 
-'''
-inp=3475
-temp=3475
-c=0
+# Use a while loop to iterate through each digit of the number
+while number > 0:
+    # Extract the last digit of the number
+    digit = number % 10
+    
+    # Check if the digit is odd
+    if digit % 2 != 0:
+        # Increment the counter if the digit is odd
+        odd_count += 1
+    
+    # Remove the last digit from the number
+    number //= 10     #number = number // 10
 
-i=1
-temp=347
-c=1
-
-i=2
-temp=34
-c=2
-
-i=3
-temp=3
-c=3
-
-i=4
-temp=0
-c=4
-
-O/P: Number of digits in 3475 is 4
-
-Alternate and easy solution:
-
-
-input_number = int(input('Enter a number to count number of digits in it: '))
-
-count_of_digits = len(str(input_number))
-
-print(f'Number of digits in {input_number} is {count_of_digits}')
-'''
+# Print the original number and the count of odd digits
+print(temp_number, "contains", odd_count, "odd digits")

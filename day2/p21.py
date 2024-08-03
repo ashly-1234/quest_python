@@ -13,3 +13,24 @@ for i in range(lines):
         print(factorial(i)//(factorial(j)*factorial(i-j)), end=" ")
 
     print()
+
+
+    '''
+    # Input the number of lines
+n = int(input("Enter the number of lines for Pascal's Triangle: "))
+
+for line in range(n):
+    # Every line starts with 1
+    number = 1
+    # Print leading spaces for formatting
+    print(' ' * (n - line), end='')
+    for i in range(line + 1):
+        # Print the current number and a space
+        print(number, end=' ')
+        # Update number to the next number in the row
+        number = number * (line - i) // (i + 1)
+    # Move to the next line
+    print()
+
+    
+    '''
