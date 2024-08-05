@@ -37,6 +37,3 @@ append those player's id who got pass as the current possessor
 
 
 '''
-
-
-
