@@ -1,6 +1,6 @@
 #check if user given input as a digit or not
 print('Enter a character to check if it is a digit')
-ch = input()
+ch = input()                           #input always return a 'string' 
 
 # if ch >= 48 and ch <= 57:            #We cannot use strings as integers in Python. If we try to do so, we get "TypeError" which is runtime error
 

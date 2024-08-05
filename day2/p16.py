@@ -9,3 +9,4 @@ for index in range(0, len(number), 2):
 print("Sum of even-placed digits:", even_placed_digits_sum)
 
 
+
