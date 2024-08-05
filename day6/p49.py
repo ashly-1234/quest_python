@@ -13,7 +13,7 @@ if (rev == temp):
 else:
     print("The number ",temp, " is not a Palindrome")
 
-Find the sum of digits of a number
-Find the smallest or Biggest digit in a number
-Count the number of Even/Odd digits in a number
-* Count the number of Prime digits in an number
+# Find the sum of digits of a number
+# Find the smallest or Biggest digit in a number
+# Count the number of Even/Odd digits in a number
+# * Count the number of Prime digits in an number
