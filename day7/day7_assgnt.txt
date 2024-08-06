@@ -1,0 +1,39 @@
+Stretch goals:
+1. Addition of numbers and concatenate of string, where space is not given in the source string but space is printed while displaying.
+    
+
+input1 = input("Enter the first input: ")
+input2 = input("Enter the second input: ")
+
+try:
+    num1 = int(input1)
+    num2 = int(input2)
+    print(num1 + num2)
+except ValueError:
+    try:
+        print(input1 + " " + input2)
+    except TypeError:
+        print("A TypeError occur")
+
+2. Tell about "file" argument in print method. 
+
+The print function in Python has a file argument that allows you to specify where the output of the print statement should be directed. By default, the print function sends its output to sys.stdout, which is usually the console or terminal. However, by using the file argument, you can redirect the output to any writable file-like object.
+
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+
+Parameters
+*objects: The values to be printed.
+sep: The separator between values (default is a space).
+end: The string appended after the last value (default is a newline).
+file: A file-like object (stream); defaults to sys.stdout.
+flush: Whether to forcibly flush the stream.
+
+
+3. How do we round off to nearest close value
+
+To round off a number to the nearest value in Python, you can use the round function. This function rounds a floating-point number to the nearest integer or to a specified number of decimal places.
+
+print(round(4.4))    # Outputs: 4
+print(round(4.5))    # Outputs: 4 (rounds to the nearest even number)
+print(round(4.6))    # Outputs: 5
+print(round(5.5))    # Outputs: 6 (rounds to the nearest even number)
