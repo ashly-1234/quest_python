@@ -38,7 +38,8 @@ gender = input("Enter gender: \nM. Male\nF. Female\nO. Other\nEnter any number."
 occupation = input("Enter occupation: \nS. Student\nW. Working\nEnter any number.")
 armed_force = input("In armed forces or parents in armed force: \nY. yes\n N. no\nEnter any number.")
 residence = input("Enter residence: \nH. hosteller \nL.localite\nEnter any number.")
- 
+discount_pin = [100001, 100002, 100003]
+residence_pin = int(input('Please enter your residence pin:'))
 
 if (age >= 60 and gender.lower() == "m") or (age >= 45 and gender.lower() == "f"):
     print("Senior citizen 15 percent discount applied, thank you for shopping")
@@ -55,7 +56,7 @@ if armed_force.lower() == 'y':
 else:
     print("No free pass, thank you for shopping")        
 
-if occupation.lower() == 's' and age <= 45:
+if occupation.lower() == 's' and age <= 45 and residence_pin in discount_pin:
     print("500 coupon for books, thank you for shopping")
     if residence.lower() == 'h':
         print("Groceries discount, thank you for shopping")
