@@ -48,19 +48,19 @@ else:
     elif age < 60 and gender.lower() == "m":
         print("100 coupon on titan, fastrack, thank you for shopping")
     else: 
-        print("Not applicable, thank you for shopping")
+        print("No discount, thank you for shopping")
 
-if occupation.lower() == 's':
+if occupation.lower() == 's' and age <= 45:
     print("500 coupon for books, thank you for shopping")
     if residence.lower() == 'h':
         print("Groceries discount, thank you for shopping")
     else:
-        print("Not applicable, thank you for shopping")    
+        print("No discount, thank you for shopping")    
 
-if armed_force.lower() == 'y':
-    print("Free pass to republic parade, thank you for shopping")
-if armed_force.lower() == 'n':
-        print("Not applicable, thank you for shopping")
+    if armed_force.lower() == 'y':
+        print("Free pass for republic parade, thank you for shopping")
+    else:
+        print("No free pass, thank you for shopping")
         
 else:
     print("thank you for shopping")
