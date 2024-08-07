@@ -40,6 +40,8 @@ armed_force = input("In armed forces or parents in armed force: \nY. yes\n N. no
 residence = input("Enter residence: \nH. hosteller \nL.localite\nEnter any number.")
 discount_pin = [100001, 100002, 100003]
 residence_pin = int(input('Please enter your residence pin:'))
+hostels = ['abc', 'bcd', 'cde']
+hostel_name =  input('Please enter your hostel name:')
 
 if (age >= 60 and gender.lower() == "m") or (age >= 45 and gender.lower() == "f"):
     print("Senior citizen 15 percent discount applied, thank you for shopping")
@@ -49,20 +51,19 @@ else:
     elif age < 60 and gender.lower() == "m":
         print("100 coupon on titan, fastrack, thank you for shopping")
     else: 
-        print("No discount, thank you for shopping")
+        print("No discount coupon, thank you for shopping")
 
 if armed_force.lower() == 'y':
     print("Free pass for republic parade, thank you for shopping")
 else:
     print("No free pass, thank you for shopping")        
 
-if occupation.lower() == 's' and age <= 45 and residence_pin in discount_pin:
+if occupation.lower() == 's'and (gender.lower() == "f" or gender.lower() == "m") and  age <= 45:
     print("500 coupon for books, thank you for shopping")
-    if residence.lower() == 'h':
+    if residence.lower() == 'h'and residence_pin in discount_pin and hostel_name.lower() in hostels:
         print("Groceries discount, thank you for shopping")
     else:
-        print("No discount, thank you for shopping")    
-        
+        print("No Groceries discount, thank you for shopping")    
 else:
     print("thank you for shopping")
 
