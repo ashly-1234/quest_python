@@ -50,17 +50,17 @@ else:
     else: 
         print("No discount, thank you for shopping")
 
+if armed_force.lower() == 'y':
+    print("Free pass for republic parade, thank you for shopping")
+else:
+    print("No free pass, thank you for shopping")        
+
 if occupation.lower() == 's' and age <= 45:
     print("500 coupon for books, thank you for shopping")
     if residence.lower() == 'h':
         print("Groceries discount, thank you for shopping")
     else:
         print("No discount, thank you for shopping")    
-
-    if armed_force.lower() == 'y':
-        print("Free pass for republic parade, thank you for shopping")
-    else:
-        print("No free pass, thank you for shopping")
         
 else:
     print("thank you for shopping")
