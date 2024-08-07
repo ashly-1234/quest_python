@@ -58,7 +58,7 @@ if armed_force.lower() == 'y':
 else:
     print("No free pass, thank you for shopping")        
 
-if occupation.lower() == 's'and (gender.lower() == "f" or gender.lower() == "m") and  age <= 45:
+if occupation.lower() == 's'and (gender.lower() == "f" or gender.lower() == "m") and  age < 45:
     print("500 coupon for books, thank you for shopping")
     if residence.lower() == 'h'and residence_pin in discount_pin and hostel_name.lower() in hostels:
         print("Groceries discount, thank you for shopping")
